@@ -1,0 +1,24 @@
+SELECT d.fname, d.lname, c.fname, c.lname,
+ r.date, r.time
+FROM driver as d, client as c, request as r, pickup as p
+WHERE p.driver = d.id AND
+      p.request = r.id AND
+      r.client = c.id;
+
+//DRIVERS LIST OF PICKUPS
+SELECT CONCAT(c.fname, " ", c.lname) AS client,
+ r.date, r.time, r.pickupStreet, r.pickupCity, r.pickupState, r.pickupZip, r.destinationStreet,
+r.destinationCity, r.destinationState, r.destinationZip, r.reason, r.requests
+FROM driver as d, client as c, request as r, pickup as p
+WHERE p.driver = d.id AND
+      p.request = r.id AND
+      r.client = c.id AND
+      r.date = '2017-08-27' AND
+      d.id = 22;
+
+//CLIENT PAGE	
+SELECT c.fname, c.lname, c.street, c.city, c.state, c.zip, c.physical, c.mental
+FROM client as c
+WHERE c.id = 85;
+
+

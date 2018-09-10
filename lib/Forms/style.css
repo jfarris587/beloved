@@ -1,0 +1,121 @@
+   body{
+        background-color: #00c6ff;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #0072ff, #00c6ff);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #0072ff, #00c6ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: white;
+    }
+
+    body, html{
+        height: auto;
+        min-height: 100%;
+        background-repeat: no-repeat;
+    }
+
+
+    .container{
+        color: white;
+    }
+
+    .overall{
+        width: 90%;
+        position: relative;
+    }
+
+    .row{
+        display: flex;
+    }
+
+    .header{
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100; 
+        font-size: 45px;
+        color: white;
+    }
+
+    .submit{
+        background-color: transparent;
+        border: solid 1px white;
+        margin-top: 10px;
+    }
+
+    .submit:hover{
+        background-color: #26af2f;
+        border: solid 1px #26af2f;
+        margin-top: 10px;
+        opacity: 1;
+    }
+
+    .btn{
+        background-color: transparent;
+        border: solid 1px white;
+    }
+
+    .btn:hover{
+        background-color: #26af2f;
+        border: solid 1px #26af2f;
+        opacity: 1;
+    }
+
+    .form-row div{
+        margin-top: 5px;
+    }
+
+    #logo{
+        max-height: 180px;
+        display: block;
+        margin-top: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (max-width:768px){
+    #logo{
+        display: none;
+    }
+}
+
+
+    .form-row label{
+        font-size: 15px;
+    }
+
+
+    #myNavbar{
+        overflow: none;
+        background-color: #e5e5e5;
+        position: relative;
+    }
+
+    #myNavbar .container{
+      width: 95%;
+    }
+
+    .navbar-collapse{
+      padding: 0;
+      height: 5px;
+    }
+    
+    .navbar-default .navbar-nav>li>a:hover {
+      color: #00c6ff;
+    }
+
+    [hidden] {
+        display: none !important;
+    }
+
+    .invalid::-webkit-input-placeholder { /* Chrome */
+      color: red;
+    }
+
+    .invalid:-ms-input-placeholder { /* IE 10+ */
+      color: red;
+    }
+    .invalid::-moz-placeholder { /* Firefox 19+ */
+      color: red;
+      opacity: 1;
+    }
+    .invalid:-moz-placeholder { /* Firefox 4 - 18 */
+      color: red;
+      opacity: 1;
+    }

@@ -1,0 +1,39 @@
+
+
+SELECT c.id as clientID, c.fname, c.lname, TIME_FORMAT(r.time, '%l:%i %p') as time, r.requests, r.reason, r.pickupNumber, r.pickupStreet, r.pickupCity, r.pickupState, r.pickupZip, r.destinationNumber, r.destinationStreet, 
+r.destinationCity, r.destinationState, r.destinationZip
+	
+	FROM request r  
+       	INNER JOIN client c  ON r.client = c.id 
+        INNER JOIN pickup p ON r.id = p.request
+        INNER JOIN driver d ON d.id = p.driver
+
+	WHERE r.date = '2018-04-18'
+	AND d.id = 1
+
+
+
+
+
+
+
+
+
+SELECT @rownum := @rownum + 1 AS rank, clientID, fname, lname, time, requests, reason, pickupNumber, pickupStreet, pickupCity, pickupState, pickupZip, destinationNumber, destinationStreet, 
+destinationCity, destinationState, destinationZip
+
+        FROM (
+        SELECT c.id as clientID, c.fname, c.lname, TIME_FORMAT(r.time, '%l:%i %p') as time, r.requests, r.reason, r.pickupNumber, r.pickupStreet, r.pickupCity, r.pickupState, r.pickupZip, r.destinationNumber, r.destinationStreet, 
+r.destinationCity, r.destinationState, r.destinationZip
+	
+	FROM request r  
+       	INNER JOIN client c  ON r.client = c.id 
+        INNER JOIN pickup p ON r.id = p.request
+        INNER JOIN driver d ON d.id = p.driver
+
+	WHERE r.date = '2018-04-18'
+	AND d.id = 1
+
+          ) AS tab
+          GROUP BY rank
+          HAVING rank = 2;

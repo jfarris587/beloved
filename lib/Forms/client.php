@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New Client</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,600|Raleway:100,300,400|Roboto:100" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/icon.png" sizes="16x16">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+ 
+
+  <script type="text/javascript">
+    window.onload = prepareButton;
+
+    var required = ["firstname",
+                    "lastname",
+                    "street",
+                    "city",
+                    "zip",
+                    "medicade",
+                    "phone",
+                    "physical",
+                    "mental",
+                    "dob"];
+    var submitReady = false;
+
+    function prepareButton()
+    { 
+       document.getElementById('submitbtn').onclick = function()
+       {
+
+        submitReady = true;
+
+        for(var i = 0; i < required.length; i++){
+          if(document.getElementById(required[i]).value == ""){
+            submitReady = false;
+            document.getElementById(required[i]).className += " invalid";
+          }
+        }       
+
+        if(submitReady){
+          document.getElementById('registrationForm').submit();
+        }
+      }
+    }
+
+  </script>
+
+</head>
+<body>
+
+
+  <!-- NAVIGATION BAR -->
+  <div id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>  
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="driver.php">Add Driver</a></li>
+          <li><a href="client.php">Add Client</a></li>
+          <li><a href="request.php">Request Pickup</a></li>
+          <li><a href="schedule.php">Schedule Pickup</a></li>
+        </ul>
+      </div> 
+    </div>
+  </div>
+  <!-- END NAVIGATION BAR -->
+
+  <!-- MAIN FORM CONTAINER -->
+  <div class="container overall">
+    <div class="row">
+      <div class="col-md-8 col-sm-8">
+
+        <h3 class="header"><span>Adding New Client</span></h3>
+
+        <form id="registrationForm" action="lib/client.php" method="post">
+          <div class="form-row">
+            <div class="col-md-4 col-sm-4">
+              <label>First Name</label>
+              <input type="text" class="form-control" id="firstname" name="fname" placeholder="First Name">
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <label>Middle Name</label>
+              <input type="text" class="form-control" name="mname" placeholder="Middle Name">
+            </div>
+            <div class="col-md-4 col-sm-4">
+              <label>Last Name</label>
+              <input type="text" class="form-control" id="lastname" name="lname" placeholder="Last Name">
+            </div>
+          </div>
+
+
+
+          <div class="form-row">
+            <div class="col-md-4 col-sm-4">
+             <label>Street</label>
+             <input type="text" class="form-control" id="street" name="street" placeholder="Street">
+           </div>
+
+            <div class="col-md-4 col-sm-4">
+             <label>City</label>
+             <input type="text" class="form-control" id="city" name="city" placeholder="City">
+           </div>
+
+           <div class="col-md-2 col-sm-2">
+            <label>State</label>
+            <select class="form-control" name="state">
+              <option selected>IN</option>
+              <option value="AL">AL</option>
+              <option value="AK">AK</option>
+              <option value="AR">AR</option>  
+              <option value="AZ">AZ</option>
+              <option value="CA">CA</option>
+              <option value="CO">CO</option>
+              <option value="CT">CT</option>
+              <option value="DC">DC</option>
+              <option value="DE">DE</option>
+              <option value="FL">FL</option>
+              <option value="GA">GA</option>
+              <option value="HI">HI</option>
+              <option value="IA">IA</option>  
+              <option value="ID">ID</option>
+              <option value="IL">IL</option>
+              <option value="IN">IN</option>
+              <option value="KS">KS</option>
+              <option value="KY">KY</option>
+              <option value="LA">LA</option>
+              <option value="MA">MA</option>
+              <option value="MD">MD</option>
+              <option value="ME">ME</option>
+              <option value="MI">MI</option>
+              <option value="MN">MN</option>
+              <option value="MO">MO</option>  
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="NC">NC</option>  
+              <option value="NE">NE</option>
+              <option value="NH">NH</option>
+              <option value="NJ">NJ</option>
+              <option value="NM">NM</option>      
+              <option value="NV">NV</option>
+              <option value="NY">NY</option>
+              <option value="ND">ND</option>
+              <option value="OH">OH</option>
+              <option value="OK">OK</option>
+              <option value="OR">OR</option>
+              <option value="PA">PA</option>
+              <option value="RI">RI</option>
+              <option value="SC">SC</option>
+              <option value="SD">SD</option>
+              <option value="TN">TN</option>
+              <option value="TX">TX</option>
+              <option value="UT">UT</option>
+              <option value="VT">VT</option>
+              <option value="VA">VA</option>
+              <option value="WA">WA</option>
+              <option value="WI">WI</option>  
+              <option value="WV">WV</option>
+              <option value="WY">WY</option>
+            </select>
+          </div>
+
+          <div class="col-md-2 col-sm-2">
+            <label>Zip</label>
+            <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip">
+          </div>
+        </div>
+
+
+        <div class="form-row">
+          <div class="col-md-3 col-sm-3">
+          <label>Date of Birth</label>
+          <input type="date" class="form-control" id="dob" name="dob" placeholder="dob">
+        </div>
+
+          <div class="col-md-6 col-sm-6">
+           <label>Medicade Number</label>
+           <input type="text" class="form-control" id="medicade" name="medicade" placeholder="#############">
+         </div>
+
+         <div class="col-md-3 col-sm-3">
+         <label>Phone Number</label>
+         <input type="email" class="form-control" id="phone" name="phone" placeholder="##########">
+       </div>
+      </div>
+
+
+      <div class="form-row">
+        <div class="col-md-6 col-sm-6">
+         <label>Physical Conditions</label>
+        <textarea class="form-control" rows="3" id="physical" name="physical" placeholder="Physical conditions"></textarea>
+       </div>
+
+        <div class="col-md-6 col-sm-6">
+         <label>Mental Conditions</label>
+        <textarea class="form-control" rows="3" id="mental" name="mental" placeholder="Mental conditions"></textarea>
+       </div>
+
+
+    <div class="form-row">
+     <div class="col-md-3 col-sm-3">
+       <button class="btn btn-primary submit" id="submitbtn" type="button">Submit form</button>
+     </div>
+   </div>
+ </form>
+</div>
+</div>
+<!-- END MAIN FORM CONTAINER -->
+
+<!--  LOGO -->
+<div class="col-md-4 col-sm-4 image img-responsive">
+  <img class="img-responsive" id="logo" src="img/whitelogo.png">
+</div>
+<!-- END LOGO -->
+</div>
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Forgot Password</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,600|Raleway:100,300,400|Roboto:100" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/icon.png" sizes="16x16">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style type="text/css">
+  .container{
+    text-align: left;
+    width: 35%;
+  }
+
+  #logo{
+    margin-top: 15px;
+    max-height: 150px;
+    padding-left: 20px;
+  }
+
+  </style>
+  <script type="text/javascript">
+    window.onload = prepareButton;
+
+    var required = ["firstname",
+                    "lastname",
+                    "email"];
+
+    var submitReady = false;
+
+    function prepareButton()
+    { 
+
+       submitReady = true;
+
+       document.getElementById('submitbtn').onclick = function()
+       {        
+        for(var i = 0; i < required.length; i++){
+          if(document.getElementById(required[i]).value == ""){
+            alert('Please fill out ' + required[i]);
+            submitReady = false;
+          }
+        }
+
+        if(submitReady){
+          document.getElementById('registrationForm').submit();
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  
+
+  <div class="container container-fluid">
+    <h3 class="header"><span>Forgot Password</span></h3>
+    <form id="registrationForm" action="lib/reset.php" method="post">
+  <div class="row">
+    <div class="col-md-12">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <label>Last Name</label>
+      <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <label>Email</label>
+      <input type="text" class="form-control" name="email" placeholder="Email" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary submit" type="submit">Send Email</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <img class="img-responsive" id="logo" src="img/whitelogo.png">
+    </div>
+  </div>
+</form>
+  
+</div>
+</body>
+</html>

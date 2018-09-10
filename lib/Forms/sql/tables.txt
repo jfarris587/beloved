@@ -1,0 +1,59 @@
+CREATE TABLE driver(
+	id int AUTO_INCREMENT,
+	fname VARCHAR(20) NOT NULL,
+	lname VARCHAR(20) NOT NULL,
+	email VARCHAR(20) NOT NULL,
+	street VARCHAR(20) NOT NULL,
+	city VARCHAR(20) NOT NULL,
+	state VARCHAR(20) NOT NULL,
+	zip VARCHAR(20) NOT NULL,	
+	license VARCHAR(20) NOT NULL,
+	expiration DATE NOT NULL,
+	plate VARCHAR(20) NOT NULL,
+	lastDrug DATE,
+	nextDrug DATE,
+	phone VARCHAR(20) NOT NULL,
+	username VARCHAR(20) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	PRIMARY KEY (id));
+
+CREATE TABLE client(
+	id INT AUTO_INCREMENT,
+	fname VARCHAR(20) NOT NULL,	
+	mname VARCHAR(20) NULL,
+	lname VARCHAR(20) NOT NULL,
+	street VARCHAR(50) NOT NULL,
+	city VARCHAR(20) NOT NULL,
+	state VARCHAR(20) NOT NULL,
+	zip INT NOT NULL,	
+	dob DATE NOT NULL,
+	medicade VARCHAR(20) NOT NULL,
+	phone VARCHAR(20) NOT NULL,
+	physical VARCHAR(50) NOT NULL,
+	mental VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id));
+
+CREATE TABLE request(
+	id INT AUTO_INCREMENT,
+	client INT NOT NULL,
+	date DATE NOT NULL,	
+	time TIME NOT NULL,
+	pickupStreet VARCHAR(20) NOT NULL,
+	pickupCity VARCHAR(20) NOT NULL,
+	pickupState VARCHAR(20) NOT NULL,
+	pickupZip INT NOT NULL,	
+	destinationStreet VARCHAR(20) NOT NULL,
+	destinationCity VARCHAR(20) NOT NULL,
+	destinationState VARCHAR(20) NOT NULL,
+	destinationZip INT NOT NULL,	
+	reason VARCHAR(20) NOT NULL,
+	requests VARCHAR(20),
+	PRIMARY KEY (id),
+	FOREIGN KEY (client) REFERENCES client(id));
+
+
+CREATE TABLE pickup(
+	driver INT NOT NULL,
+	request INT NOT NULL,
+	FOREIGN KEY (driver) REFERENCES driver(id),
+	FOREIGN KEY (request) REFERENCES request(id));
