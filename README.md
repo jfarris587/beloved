@@ -8,6 +8,8 @@ Beloved Transportation is a Bloomington local non-profit organization that takes
 
 Nevertheless, the organization has had a influx of clients, making their current process slow their growth. Being without a proper IT solution, pen and paper was their only method of proper organization. However, with a technology solution, their growth could be increased exponentially.
 
+![](https://i.imgur.com/7NTyHLv.jpg)
+
 # Technology
 
 - Java
