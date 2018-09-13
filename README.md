@@ -1,4 +1,5 @@
-![](https://i.imgur.com/0lTpXc2.png)
+
+<img src="https://i.imgur.com/0lTpXc2.png" width="30%"/>
 
 This is a android application, with a web-based office portal that a non-profit company uses for their transportation services. The android application, used by drivers, has many features such as detailed client info, Google Maps integration, and text/calling. The web portal allows the home office of the non-profit to schedule their clients for pickups and drop offs.
 
