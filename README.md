@@ -9,8 +9,6 @@ Beloved Transportation is a Bloomington local non-profit organization that takes
 
 Nevertheless, the organization has had a influx of clients, making their current process slow their growth. Being without a proper IT solution, pen and paper was their only method of proper organization. However, with a technology solution, their growth could be increased exponentially.
 
-![](https://i.imgur.com/7NTyHLv.jpg)
-
 # Technology
 
 - Java
@@ -21,6 +19,9 @@ Nevertheless, the organization has had a influx of clients, making their current
 - JavaScript
 
 The mobile application was built for Android using Java as the foundational programming language. The MySQL database was queried with SQL and PHP as the server-side language. For the web based portal, HTML, CSS and JavaScript were for the front end with PHP and MySQL on the back end as well.
+
+![](https://i.imgur.com/7NTyHLv.jpg)
+
 
 # Android Features
 
